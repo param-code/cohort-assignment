@@ -9,5 +9,11 @@ There is no automated test for this one, this is more for you to understand time
 */
 
 function calculateTime(n) {
-    return 0.01;
+    let before = Date.now();
+    let sum = 0;
+    for(let x = 1;x <= n;x++)sum+=x;
+    let after = Date.now();
+    let ans = after - before;
+    console.log(ans);
 }
+calculateTime(10000000000);

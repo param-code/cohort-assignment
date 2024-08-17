@@ -8,7 +8,7 @@
     - clear: makes the `result` variable to 0
     - getResult: returns the value of `result` variable
     - calculate: takes a string expression which can take multi-arithmetic operations and give its result
-      example input: `10 +   2 *    (   6 - (4 + 1) / 2) + 7`
+      example input: `10+2*(6 - (4 + 1) / 2) + 7`
       Points to Note: 
         1. the input can have multiple continuous spaces, you're supposed to avoid them and parse the expression correctly
         2. the input can have invalid non-numerical characters like `5 + abc`, you're supposed to throw error for such inputs
@@ -16,6 +16,49 @@
   Once you've implemented the logic, test your code by running
 */
 
-class Calculator {}
+class Calculator {
+    constructor() {
+        this.result = 0;
+    }
+    add(num){
+        this.result += num;
+    }
+    subtract(num){
+        this.result -= num;
+    }
+    multiply(num){
+        this.result *= num;
+    }
+    divide(num){
+        if(num === 0)throw "Error";
+        else this.result /= num;
+    }
+    clear(){
+        this.result = 0;
+    }
+    getResult(){
+        return this.result;
+    }
+    calculate(str){
+        str = str.replaceAll(' ','');
+        let ans = 0;
+        let req = "1234567890+-/*()";
+        for(let x in str){
+            let test = false;
+            for(let z in req){
+                if(z === x)test = true;
+            }
+            if(test)throw "error Invalid Input!!";
+            else{
+                for(let n of str){
+                    if(n >= '0' && n <= '9'){
+                        ans += n;
+                    }
+                }
+            }
+        }
+    }
+}
 
+// `10+2 * (     6 - (4 + 1) / 2) + 7`
 module.exports = Calculator;

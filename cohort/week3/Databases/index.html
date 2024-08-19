@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="view-port" content="width=device-width initial-scale=1.0">
+        <title>Databases fetch</title>
+        <link href="style.css" type="text/css" rel="stylesheet">
+    </head>
+    <body>
+    <script>
+        function getAnimalData(){
+            // const response = fetch('https://fakerapi.it/api/v1/persons');
+            // console.log(response);
+            fetch('https://fakerapi.it/api/v1/persons').then((response)=>{
+                response.json().then((finalData)=>{
+                    console.log(finalData);
+                })
+            })
+        }
+
+        async function getPersonData(){
+            const response = await fetch('https://fakerapi.it/api/v1/persons');
+            const finalData = await response.json();
+            console.log(finalData);
+            document.getElementById('userData').innerText = JSON.stringify(finalData);
+        }
+        // async function getPersonData(){
+        //     const response = await fetch('https://fakerapi.it/api/v1/persons',{
+        //         headers:{
+        //             'Authorization':localStorage.read('token')
+        //         }
+        //     });
+        //     const finalData = await response.json();
+        //
+        //     console.log(finalData);
+        // }
+    </script>
+    <div id="userData"></div>
+    <button onclick="getPersonData()">Get User Data</button>
+    </body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="view-port" content="width=device-width initial-scale=1.0">
+    <title>DOM Events</title>
+</head>
+<body>
+    <h1>JavaScript addEventListener()</h1>
+    <p>This example uses the addEventListener() method on the window object.</p>
+    <p>Try resizing this browser window to trigger the 'resize' event handler.</p>
+    <p id="demo"></p>
+    <script>
+        window.addEventListener('resize',()=>{
+            document.getElementById('demo').innerHTML = Math.random();
+        })
+    </script>
+</body>
+</html>

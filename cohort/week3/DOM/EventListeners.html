@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="view-port" content="width=device-width initial-scale=1.0">
+    <title>DOM Events</title>
+</head>
+<body>
+    <h1>JavaScript addEventListener()</h1>
+    <p>This example uses the addEventListener() method to execute a function when a user clicks on a button.</p>
+    <button id="myBtn">Try it</button>
+    <script>
+        document.getElementById('myBtn').addEventListener('click',myFunction);
+        function myFunction(){
+            alert('Hello World!');
+        }
+    </script>
+</body>
+</html>

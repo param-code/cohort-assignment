@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="view-port" content="width=device-width initial-scale=1.0">
+    <title>setAttribute</title>
+</head>
+<body>
+<h1 id="myh1">The Element object</h1>
+<h2>The SetAttribute() method</h2>
+<input id="myInput" value="OK">
+<p>Click 'Change' to Change the input field to an input button.</p>
+<button onclick="myFunction()">Change</button>
+<script>
+    function myFunction(){
+        document.getElementById('myInput').setAttribute('type','button');
+    }
+</script>
+</body>
+</html>

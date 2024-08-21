@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="view-port" content="width=device-width initial-scale=1.0">
+    <title>DOM Events</title>
+</head>
+<body>
+    <h1>JavaScript HTML Events</h1>
+    <h2>The oninput Attribute</h2>
+    Enter your Name: <input type="text" id="fname" oninput="uppercase()">
+    <p>When you write in the input field,a function is triggered to transform the input to upper case.</p>
+    <script>
+        function uppercase(){
+            const x = document.getElementById('fname');
+            x.value = x.value.toUpperCase();
+        }
+    </script>
+</body>
+</html>
